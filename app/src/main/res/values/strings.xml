@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">HomeWork1</string>
+    <string name="reset">Сброс</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="string1">Все места свободны</string>
+    <string name="string2">В автобусе осталось: </string>
+    <string name="string3">Пассажиров слишком много!</string>
+
+</resources>
