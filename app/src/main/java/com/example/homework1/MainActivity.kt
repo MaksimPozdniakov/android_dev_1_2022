@@ -67,13 +67,25 @@ class MainActivity : AppCompatActivity() {
             textViewCenter.setText(R.string.string1)
             binding.textViewCenter.setTextColor(getColor(R.color.green))
         } else if (counter in 1..49) {
-            var changeSits: Int = maxSeats - counter
-            val text = getString(R.string.string2) + changeSits.toString()
+            val changeSits: Int = maxSeats - counter
+            val text = getString(R.string.string2) + "\n" + changeSits.toString() + correctString(changeSits)
             textViewCenter.text = text
             binding.textViewCenter.setTextColor(getColor(R.color.blue))
         } else if (counter >= 50) {
             textViewCenter.setText(R.string.string3)
             binding.textViewCenter.setTextColor(getColor(R.color.red))
+        }
+    }
+
+    private fun correctString(quantity: Int) : String {
+        return if (quantity % 10 == 1 && quantity % 100 != 11) {
+            " место"
+        } else if (
+            (quantity % 10 in 2..4) &&
+            (quantity % 100 < 10 || quantity % 100 >= 20)) {
+            " места"
+        } else {
+            " мест"
         }
     }
 
